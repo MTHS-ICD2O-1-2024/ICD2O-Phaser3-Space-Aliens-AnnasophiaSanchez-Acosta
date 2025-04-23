@@ -5,6 +5,12 @@
 //Created on April 2025
 //This is the Phaser3 game configuration file
 
+// scene import statements
+import SplashScene from "./splashScene.js"
+
+// create the new scenes
+const splashScene = new SplashScene()
+
 /**
  * Start Phaer Game
  */
