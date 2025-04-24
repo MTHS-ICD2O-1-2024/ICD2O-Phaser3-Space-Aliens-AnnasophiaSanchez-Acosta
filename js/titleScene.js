@@ -25,6 +25,11 @@ class TitleScene extends Phaser.Scene {
   init(data) {
     this.cameras.main.setBackgroundColor("ffffff")
   }
+
+  /**
+   * Can be defined on your own Scenes.
+   * Use it to load assets.
+   */
   preload() {
     console.log("Title Scene")
   }
