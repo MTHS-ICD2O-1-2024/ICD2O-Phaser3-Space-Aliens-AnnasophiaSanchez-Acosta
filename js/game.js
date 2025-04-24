@@ -16,20 +16,20 @@ const titleScene = new TitleScene()
 /**
  * Start Phaer Game
  */
-const config ={
-  type:Phaser.AUTO,
-  width:1920,
+const config = {
+  type: Phaser.AUTO,
+  width: 1920,
   height: 1080,
-  physics:{
-    default:"arcade",
-    arcade:{
+  physics: {
+    default: "arcade",
+    arcade: {
       debug: true,
     },
   },
-//set background color
-  backgroundColor:0x5f6e7a,
-  scale:{
-    mode:Phaser.Scale.FIT,
+  //set background color
+  backgroundColor: 0x5f6e7a,
+  scale: {
+    mode: Phaser.Scale.FIT,
     //we place it in the middle of the page
     autoCenter: Phaser.Scale.CENTER_BOTH,
   },

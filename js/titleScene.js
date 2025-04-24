@@ -13,7 +13,7 @@ class TitleScene extends Phaser.Scene {
    * This method is the constructor.
    */
   constructor() {
-    super({ key: "titleScene"})
+    super({ key: "titleScene" })
   }
 
   init(data) {
@@ -23,13 +23,13 @@ class TitleScene extends Phaser.Scene {
     console.log("Title Scene")
   }
 
-create(data) {
-  // pass
-}
+  create(data) {
+    // pass
+  }
 
-update(time, delta) {
-  // pass
-}
+  update(time, delta) {
+    // pass
+  }
 }
 
 export default TitleScene

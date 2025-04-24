@@ -14,7 +14,7 @@ class SplashScene extends Phaser.Scene {
    * This method is the constructor.
    */
   constructor() {
-    super({ key: "splashScene"})
+    super({ key: "splashScene" })
   }
 
   init(data) {
@@ -24,15 +24,15 @@ class SplashScene extends Phaser.Scene {
    * Can be defined on your own Scenes.
    * Use it to load assets.
    */
-  preload()  {
+  preload() {
     console.log("Splash Scene")
   }
 
   create(data) {
-      //pass
+    //pass
   }
 
-  update(time,delta) {
+  update(time, delta) {
     this.scene.switch("titleScene")
   }
 }
