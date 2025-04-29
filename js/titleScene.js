@@ -1,9 +1,9 @@
 /*global Phaser*/
-//Copyright (c) 2020 Mr. Coxall All rights reserved
+// Copyright (c) 2020 Mr. Coxall All rights reserved
 //
-//Created by Mr. Coxall updated by Anna S.
-//Created on April 2025
-//This is the Title Scene
+// Created by Mr. Coxall updated by Anna S.
+// Created on April 2025
+// This is the Title Scene
 
 /**
  * This is the Title Scene.
