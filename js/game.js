@@ -26,21 +26,21 @@ const config = {
       debug: true,
     },
   },
-  //set background color
+  // set background color
   backgroundColor: 0x5f6e7a,
   scale: {
     mode: Phaser.Scale.FIT,
-    //we place it in the middle of the page
+    // we place it in the middle of the page
     autoCenter: Phaser.Scale.CENTER_BOTH,
   },
 }
 const game = new Phaser.Game(config)
 //console.log(game)
 
-//load scenes
-//Note: remember any "key" is global and can not be reused
+// load scenes
+// Note: remember any "key" is global and can not be reused
 game.scene.add("splashScene", splashScene)
 game.scene.add("titleScene", titleScene)
 
-//the start scene
+// the start scene
 game.scene.start("splashScene")
