@@ -44,7 +44,7 @@ class GameScene extends Phaser.Scene {
    * @param {object} data- Any data passed via ScenePlugin.add() or ScenePlugin.start().
    */
   create(data) {
-    this.backrgound = this.add.image(0, 0, "starBackrgound").setScale(2.0)
+    this.background = this.add.image(0, 0, "starBackground").setScale(2.0)
     this.background.setOrigin(0, 0)
 
     this.ship = this.physics.add.sprite(1920 / 2, 1080 - 100, "ship")
