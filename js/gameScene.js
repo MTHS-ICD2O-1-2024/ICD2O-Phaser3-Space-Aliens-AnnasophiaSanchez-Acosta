@@ -43,7 +43,7 @@ class GameScene extends Phaser.Scene {
     this.load.image("missile", "./assets/missile.png")
 
     // sound
-    this.load.audio("laser", "assets/laser1.wav")
+    this.load.audio("laser", "./assets/laser1.wav")
   }
 
   /**Can be defined on your own Scenes.
@@ -67,6 +67,7 @@ class GameScene extends Phaser.Scene {
    * @param {number} delta The delta time in ms since the last frame.
    */
   update(time, delta) {
+    // called 60 times a second 
     const keyLeftObj = this.input.keyboard.addKey("LEFT")
     const keyRightObj = this.input.keyboard.addKey("RIGHT")
     const keySpaceObj = this.input.keyboard.addKey ("SPACE")
@@ -97,12 +98,12 @@ class GameScene extends Phaser.Scene {
       this.fireMissile = false
     }
 
-    this.missileGroup.children.each[function (item) {
+    this.missileGroup.children.each(function (item) {
       item.y = item.y - 15
       if (item.y < 0) {
         item.destroy()
       }
-    }]
+    })
   }
 }
 
