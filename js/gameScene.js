@@ -9,6 +9,16 @@
  * This class is the Game Scene.
  */
 class GameScene extends Phaser.Scene {
+  // create an album
+  createAlien () {
+    const alienXLocation = Math.floor(Math.random() * 1920) + 1 // this will get number between 1 and 1920
+    let alienXVelocity = Math.floor(Math.random() * 50) + 1 // this will get a number between 1 and 50
+    alienXVelocity *= Math.round(Math.random()) ? 1 : -1 // this will add minus sign in %0% of cases
+    const anAlien = this.physics.add.sprite(alienXLocation, -100, "alien")
+    anAlien.body.velocity.y = 200
+    anAlien.body.velocity.x = alienXVelocity
+    this.alienGroup.add(anAlien)
+  }
   /**
    * This method is the constructor.
    */
@@ -41,6 +51,7 @@ class GameScene extends Phaser.Scene {
     this.load.image("starBackground", "./assets/starBackground.png")
     this.load.image("ship", "./assets/spaceShip.png")
     this.load.image("missile", "./assets/missile.png")
+    this.load.image("alien", "./assets/alien.png")
 
     // sound
     this.load.audio("laser", "./assets/laser1.wav")
@@ -58,6 +69,10 @@ class GameScene extends Phaser.Scene {
 
     // create a group for the missiles
     this.missileGroup = this.physics.add.group()
+
+    // create a group for aliens
+    this.alienGroup = this.add.group()
+    this.createAlien()
   }
 
   /**
