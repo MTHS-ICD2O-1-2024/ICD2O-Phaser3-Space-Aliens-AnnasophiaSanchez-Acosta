@@ -10,7 +10,7 @@
  */
 class GameScene extends Phaser.Scene {
   // create an album
-  createAlien () {
+  createAlien() {
     const alienXLocation = Math.floor(Math.random() * 1920) + 1 // this will get number between 1 and 1920
     let alienXVelocity = Math.floor(Math.random() * 50) + 1 // this will get a number between 1 and 50
     alienXVelocity *= Math.round(Math.random()) ? 1 : -1 // this will add minus sign in %0% of cases
@@ -76,20 +76,24 @@ class GameScene extends Phaser.Scene {
     this.createAlien()
 
     // Collisions between missiles and aliens
-    this.physics.add.collider(this.missileGroup, this.alienGroup, function (missileCollide, alienCollide) {
-      alienCollide.destroy()
-      missileCollide.destroy()
-      this.sound.play("explosion")
-      this.createAlien()
-      this.createAlien()
-      }.bind(this))
+    this.physics.add.collider(
+      this.missileGroup,
+      this.alienGroup,
+      function (missileCollide, alienCollide) {
+        alienCollide.destroy()
+        missileCollide.destroy()
+        this.sound.play("explosion")
+        this.createAlien()
+        this.createAlien()
+      }.bind(this)
+    )
   }
 
   update(time, delta) {
-    // called 60 times a second 
+    // called 60 times a second
     const keyLeftObj = this.input.keyboard.addKey("LEFT")
     const keyRightObj = this.input.keyboard.addKey("RIGHT")
-    const keySpaceObj = this.input.keyboard.addKey ("SPACE")
+    const keySpaceObj = this.input.keyboard.addKey("SPACE")
 
     if (keyLeftObj.isDown === true) {
       this.ship.x -= 15
@@ -108,7 +112,11 @@ class GameScene extends Phaser.Scene {
       if (this.fireMissile === false) {
         // fire missile
         this.fireMissile = true
-        const aNewMissile = this.physics.add.sprite(this.ship.x, this.ship.y, "missile")
+        const aNewMissile = this.physics.add.sprite(
+          this.ship.x,
+          this.ship.y,
+          "missile"
+        )
         this.missileGroup.add(aNewMissile)
         this.sound.play("laser")
       }
