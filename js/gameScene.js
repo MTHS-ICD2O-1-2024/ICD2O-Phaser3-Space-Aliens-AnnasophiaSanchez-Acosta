@@ -54,8 +54,8 @@ class GameScene extends Phaser.Scene {
     this.load.image("alien", "./assets/alien.png")
 
     // sound
-    this.load.audio("laser", "./assets/laser1.wav")
-    this.load.audio("explosion", "./assets/barrelExplosion.wav")
+    this.load.audio("laser", "assets/laser1.wav")
+    this.load.audio("explosion", "assets/barrelExploding.wav")
   }
 
   /**Can be defined on your own Scenes.
