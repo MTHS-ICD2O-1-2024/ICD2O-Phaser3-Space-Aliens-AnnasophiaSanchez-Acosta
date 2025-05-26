@@ -28,6 +28,9 @@ class GameScene extends Phaser.Scene {
     this.background = null
     this.ship = null
     this.fireMissile = false
+    this.score = 0
+    this.scoreText = null
+    this.scoreTextStyle = { font: "65px Arial", fills: "#ffffff", align: "center"}
   }
 
   /**
@@ -37,7 +40,7 @@ class GameScene extends Phaser.Scene {
    * @param {object} data - Any data passed via ScenePlugin.add() or ScenePlugin.start().
    */
   init(data) {
-    this.cameras.main.setBackgroundColor("#ffffff")
+    this.cameras.main.setBackgroundColor("#0x5f6e7a")
   }
 
   /**
@@ -83,6 +86,8 @@ class GameScene extends Phaser.Scene {
         alienCollide.destroy()
         missileCollide.destroy()
         this.sound.play("explosion")
+        this.score = this.score + 1 
+        this.scoreText.setText("Score:" + this.score.toString())
         this.createAlien()
         this.createAlien()
       }.bind(this)
